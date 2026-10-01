@@ -1,0 +1,47 @@
+.home-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.home-container h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.regions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.region-card {
+  width: 220px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.buttons a:hover {
+  background: #555;
+}

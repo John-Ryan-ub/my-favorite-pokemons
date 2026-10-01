@@ -1,0 +1,30 @@
+<div class="mart-page">
+  <div class="mart-header">
+    <div>
+      <h1>PokéMart</h1>
+      <p>Buy useful items for your Pokémon adventure.</p>
+    </div>
+    <a routerLink="/cart" class="cart-button">
+      View Cart
+    </a>
+  </div>
+  <div class="shop-container">
+    @for (item of items(); track item.id) {
+      <div class="item-card">
+        <h2>{{ item.name }}</h2>
+        <p class="category">
+          {{ item.category }}
+        </p>
+        <p>
+          {{ item.description }}
+        </p>
+        <h3>
+          ₱{{ item.price }}
+        </h3>
+        <button (click)="addToCart(item)">
+          Add to Cart
+        </button>
+      </div>
+    }
+  </div>
+</div>

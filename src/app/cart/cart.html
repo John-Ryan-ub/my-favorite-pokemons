@@ -1,0 +1,37 @@
+<div class="cart-page">
+  <h1>Shopping Cart</h1>
+  @if (cart().length === 0) {
+    <div class="empty-cart">
+      <h2>Your cart is empty.</h2>
+      <p>Visit the PokéMart to buy some items.</p>
+      <a routerLink="/pokemart">
+        Go to PokéMart
+      </a>
+    </div>
+  }
+  @else {
+    <div class="cart-list">
+      @for (item of cart(); track $index) {
+        <div class="cart-item">
+          <div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.category }}</p>
+            <strong>
+              ₱{{ item.price }}
+            </strong>
+          </div>
+          <button (click)="removeItem($index)">Remove</button>
+        </div>
+      }
+
+    </div>
+    <div class="cart-summary">
+      <h2>
+        Total Amount:
+        ₱{{ totalPrice() }}
+      </h2>
+      <button class="clear-button" (click)="clearCart()">Clear Cart</button>
+      <a class="continue-button" routerLink="/pokemart">Continue Shopping</a>
+    </div>
+  }
+</div>

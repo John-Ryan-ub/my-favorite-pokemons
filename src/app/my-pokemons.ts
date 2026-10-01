@@ -35,7 +35,7 @@ export class MyPokemons {
         description: 'To protect its Trainer, it will expend all its psychic power to create a small black hole.' }
     ]);
 
-    private martItems = signal<any[]>([
+    private pokemartItems = signal<any[]>([
         { id: 1, name: 'Poké Ball', price: 200, category: 'Balls', description: 'A device for catching wild Pokémon.' },
         { id: 2, name: 'Great Ball', price: 600, category: 'Balls', description: 'A high-performance Ball that provides a higher catch rate.' },
         { id: 3, name: 'Ultra Ball', price: 1200, category: 'Balls', description: 'An ultra-performance Ball providing an even higher success rate.' },
@@ -48,17 +48,25 @@ export class MyPokemons {
         { id: 10, name: 'Max Repel', price: 900, category: 'Utility', description: 'Prevents weak wild Pokémon from appearing for 250 steps.' }
     ]);
 
-    mart = this.martItems.asReadonly();
+    mart = this.pokemartItems.asReadonly();
 
-    totalPrice = computed(() => 
-        this.martItems().reduce((sum, item) => sum + item.price, 0)
+    cart = signal<any[]>([]);
+
+    totalPrice = computed(() =>
+        this.cart().reduce((sum, item) => sum + item.price, 0)
     );
 
     addToCart(product: any) {
-        this.martItems.update(current => [...current, product]);
+        this.cart.update(current => [...current, product]);
+    }
+
+    removeFromCart(id: number) {
+        this.cart.update(current =>
+            current.filter(item => item.id !== id)
+        );
     }
 
     clearCart() {
-        this.martItems.set([]);
+        this.cart.set([]);
     }
 }

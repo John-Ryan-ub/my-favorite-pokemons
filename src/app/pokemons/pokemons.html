@@ -1,1 +1,61 @@
-<p>pokemons works!</p>
+<div class="pokemon-page">
+  <h1>My Favorite Pokémon</h1>
+  <h2>Kanto Region</h2>
+  <div class="pokemon-container">
+    @for (pokemon of kanto(); track pokemon.name) {
+      <div class="pokemon-card">
+        <h3>{{ pokemon.name }}</h3>
+        <p>
+          <strong>Type:</strong>
+          {{ pokemon.type }}
+        </p>
+        <p>
+          <strong>Held Item:</strong>
+          {{ pokemon.heldItem }}
+        </p>
+        <p>
+          {{ pokemon.description }}
+        </p>
+      </div>
+    }
+  </div>
+  <h2>Johto Region</h2>
+  <div class="pokemon-container">
+    @for (pokemon of johto(); track pokemon.name) {
+      <div class="pokemon-card">
+        <h3>{{ pokemon.name }}</h3>
+        <p>
+          <strong>Type:</strong>
+          {{ pokemon.type }}
+        </p>
+        <p>
+          <strong>Held Item:</strong>
+          {{ pokemon.heldItem }}
+        </p>
+        <p>
+          {{ pokemon.description }}
+        </p>
+      </div>
+    }
+  </div>
+
+  <h2>Hoenn Region</h2>
+  <div class="pokemon-container">
+    @for (pokemon of hoenn(); track pokemon.name) {
+      <div class="pokemon-card">
+        <h3>{{ pokemon.name }}</h3>
+        <p>
+          <strong>Type:</strong>
+          {{ pokemon.type }}
+        </p>
+        <p>
+          <strong>Held Item:</strong>
+          {{ pokemon.heldItem }}
+        </p>
+        <p>
+          {{ pokemon.description }}
+        </p>
+      </div>
+    }
+  </div>
+</div>

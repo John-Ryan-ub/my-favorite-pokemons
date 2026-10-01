@@ -1,0 +1,54 @@
+.mart-page {
+  padding: 30px;
+}
+
+.mart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cart-button {
+  background: #222;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.item-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  background: #f7f7f7;
+}
+
+.item-card h2 {
+  margin-top: 0;
+}
+
+.category {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.item-card button {
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.item-card button:hover {
+  background: #555;
+}
